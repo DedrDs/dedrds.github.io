@@ -17,6 +17,7 @@ body{
 	width: 100%;
 	background-color: #000;
 	z-index: 1000;
+	min-width: 1024px;
 }
 .top-menu-btn{
 	position: relative;
@@ -43,6 +44,7 @@ body{
 .box{
 	position: relative;
 	width: 100%;
+	min-width: 1024px;
 }
 #ad-box{
 	height: 200px;
