@@ -1,0 +1,48 @@
+body{
+	margin: 0;
+	background-color: #333;
+	color: #fff;
+}
+#clock{
+	position: relative;
+	background-color: #ebc034;
+	margin-top: 100px;
+	height: 400px;
+	width: 400px;
+	border-radius: 50%;
+}
+#clock-date{
+	position: absolute;
+	width: 280px;
+	top: 70px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 50px;
+	color: #000;
+}
+.clock-date{
+	display: inline-block;
+}
+#clock-time{
+	position: absolute;
+	width: 350px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #000;
+	font-size: 75px;
+}
+.clock-time{
+	display: inline-block;
+}
+#year{
+	width: 80px;
+}
+#day{
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 80px;
+	color: #000;
+}
