@@ -1,0 +1,78 @@
+body{
+	margin: 0;
+	background-color: #333;
+}
+#top-menu{
+	position: fixed;
+	height: 50px;
+	width: 100%;
+	background-color: #111;
+	background-image: url(tmbg.jpg);
+	background-size: 10%;
+	box-shadow: 0 0 50px 6px #000 inset;
+}
+#top-menu-logo{
+	height: 50px;
+	width: 180px;
+	position: absolute;
+	transition-duration: 200ms;
+	transition-property: background-color;
+}
+#top-menu-logo:hover{
+	background-color: #000;
+}
+#top-menu-logo-img{
+	height: 50px;
+}
+.top-menu-left-btn{
+	padding: 10px;
+	height: 30px;
+	display: inline-block;
+	position: relative;
+	left: 180px;
+	font-size: 25px;
+	color: #aaa;
+	transition-duration: 200ms;
+	transition-property: color background-color;
+}
+#top-menu-left a{
+	text-decoration: none;
+	color: #aaa;
+}
+.top-menu-left-btn:hover{
+	background-color: rgba(64,64,64,0.5);
+	color: #fff;
+}
+#top-menu-left-btn1{
+	width: 125px;
+}
+#tml-btn1-vec{
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 17px;
+	top: 17px;
+	transition-duration: 200ms;
+	transition-property: transform;
+}
+#top-menu-left-btn1:hover #tml-btn1-vec{
+	transform: rotate(-180deg);
+}
+#tml-btn1-menu{
+	position: absolute;
+	top: 100%;
+	width: 260px;
+	height: 0;
+	background-color: #222;
+	left: 0;
+	overflow: hidden;
+}
+#top-menu-left-btn1:hover #tml-btn1-menu{
+	height: 200px;
+}
+.tml-btn1-menu-field{
+	height: 30px;
+	padding: 10px;
+	font-size: 25px;
+	color: #aaa;
+}

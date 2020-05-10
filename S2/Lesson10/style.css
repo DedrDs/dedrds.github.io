@@ -1,0 +1,229 @@
+body{
+	margin: 0;
+	padding-top: 100px;
+	background-color: #ddd;
+}
+#top-menu{
+	height: 100px;
+	width: 100%;
+	position: fixed;
+	background-color: #222;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+#logo{
+	height: 504px;
+	width: 1196px;
+	position: relative;
+	background-image: url(logo.jpg);
+	background-size: 100%;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+#buttons{
+	height: 100px;
+	width: 1080px;
+	background-color: #222;
+	position: relative;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.btn{
+	height: 100px;
+	width: 360px;
+	position: absolute;
+	transition-duration: 500ms;
+}
+#btn1{
+	background-color: #700000;
+	left: 0;
+}
+#btn2{
+	background-color: #007000;
+	left: 360px;
+}
+#btn3{
+	background-color: #000070;
+	left: 720px;
+}
+.btn:hover{
+	padding: 5px;
+	z-index: 1;
+	transform: translate(-5px,-5px);
+}
+#btn1:hover{
+	background-color: #222;
+}
+#btn2:hover{
+	background-color: #222;
+}
+#btn3:hover{
+	background-color: #222;
+}
+.btn-text{
+	height: 100px;
+	width: 260px;
+	position: absolute;
+	color: #fff;
+	text-align: center;
+}
+.btn-img{
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	left: 260px;
+}
+.btn-img-img{
+	max-height: 200%;
+	max-width: 100%;
+}
+#top-menu-logo{
+	height: 200px;
+	width: 200px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-radius: 50%;
+	overflow: hidden;
+	position: absolute;
+}
+#top-menu-gif{
+	width: 100%;
+}
+#top-menu-left{
+	position: absolute;
+	width: 50%;
+	max-width: 598px;
+	min-width: 260px;
+	height: 100%;
+	right: 50%;
+	z-index: -1;
+}
+.top-menu-btn{
+	position: absolute;
+	height: 60px;
+	width: 60px;
+	background-color: #656;
+	top: 20px;
+	border-radius: 50%;
+}
+#top-menu-left-btn1{
+	right: 70%;
+	background-image: url(topbtn1.jpg);
+	background-size: 100%;
+	background-position: 0,-40px;
+}
+#top-menu-left-btn2{
+	right: 40%;
+	background-image: url(topbtn2.jpg);
+	background-size: 100%;
+}
+#top-menu-right{
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	left: 50%;
+	z-index: -1;
+	max-width: 598px;
+	min-width: 260px;
+}
+#top-menu-right-btn1{
+	left: 40%;
+	background-image: url(topbtn3.jpg);
+	background-size: 180%;																														background-position: -25px,0;
+}
+#top-menu-right-btn2{
+	left: 70%;
+	background-image: url(topbtn4.jpg);
+	background-size: 100%;
+}
+#top-menu-left-btn1:hover{
+	background-image: url(topbtn1.gif);
+}
+#top-menu-left-btn2:hover{
+	background-image: url(topbtn2.gif);
+}
+#top-menu-right-btn1:hover{
+	background-image: url(topbtn3.gif);
+}
+#top-menu-right-btn2:hover{
+	background-image: url(topbtn4.gif);
+}
+#content{
+	width: 1000px;
+	min-height: 1000px;
+	background-color: #fff;
+	left: 0;
+	right: 0;
+	margin: auto;
+	position: relative;
+}
+#content-buttons{
+	background-color: #bbb;
+	height: 100px;
+	min-width: 400px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	transform: translateY(50px);
+	display: flex;
+	justify-content: center;
+}
+.content-btn{
+	display: inline-block;
+	font-size: 45px;
+	height: 50px;
+	padding: 25px;
+}
+.feed{
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	transition-duration: 1s;
+	transition-property: height;
+	background-color: #ccc;
+	position: absolute;
+	top: 100px;
+	left: 0;
+}
+.content-btn:hover .feed{
+	height: 850px;
+}
+.feed-box{
+	display: inline-block;
+	height: 241px;
+	width: 241px;
+	background-color: #006;
+}
+#feed1-box2{
+	background-size: 200%;
+	background-image: url(https://vesti.ua/img/article/3137/93_main.jpeg);
+}
+#feed2-box3{
+	background-size: 200%;
+	background-image: url(https://geek-picnic.me/uploads/0180f79abdf1156c631226767a9957a3.png);
+}
+#feed3-box1{
+	background-size: 200%;
+	background-image: url(http://www.gctc.ru/media/images/education/general/cosmos_1.jpg);
+}
+#feed1-box1{
+	background-size: 200%;
+	background-image: url(https://hi-news.ru/wp-content/uploads/2017/05/space-03.jpg);
+}
+#feed2-box1{
+	background-size: 200%;
+	background-image: url(https://fakty.com.ua/wp-content/uploads/2018/09/11/dreamstime_l_113853388-e1536677979712.jpg);
+}
+#feed3-box2{
+	background-size: 200%;
+	background-image: url(https://glavcom.ua/img/article/6296/5_main.jpg);
+}
+#info{
+	width: 100%;
+	height: 200px;
+	background-color: #000;
+}

@@ -1,0 +1,143 @@
+body{
+	margin: 0;
+	padding-top: 100px;
+	background-color: #ddd;
+}
+#top-menu{
+	height: 100px;
+	width: 100%;
+	position: fixed;
+	background-color: #222;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+#logo{
+	height: 504px;
+	width: 1196px;
+	position: relative;
+	background-image: url(logo.jpg);
+	background-size: 100%;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+#buttons{
+	height: 100px;
+	width: 1080px;
+	background-color: #222;
+	position: relative;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.btn{
+	height: 100px;
+	width: 360px;
+	position: absolute;
+	transition-duration: 500ms;
+}
+#btn1{
+	background-color: #700000;
+	left: 0;
+}
+#btn2{
+	background-color: #007000;
+	left: 360px;
+}
+#btn3{
+	background-color: #000070;
+	left: 720px;
+}
+.btn:hover{
+	padding: 5px;
+	z-index: 1;
+	transform: translate(-5px,-5px);
+}
+#btn1:hover{
+	background-color: #222;
+}
+#btn2:hover{
+	background-color: #222;
+}
+#btn3:hover{
+	background-color: #222;
+}
+.btn-text{
+	height: 100px;
+	width: 260px;
+	position: absolute;
+	color: #fff;
+	text-align: center;
+}
+.btn-img{
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	left: 260px;
+}
+.btn-img-img{
+	max-height: 200%;
+	max-width: 100%;
+}
+#top-menu-logo{
+	height: 200px;
+	width: 200px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-radius: 50%;
+	overflow: hidden;
+	position: absolute;
+}
+#top-menu-gif{
+	width: 100%;
+}
+#top-menu-left{
+	position: absolute;
+	width: 50%;
+	max-width: 598px;
+	min-width: 260px;
+	height: 100%;
+	background-color: #444;
+	right: 50%;
+	z-index: -1;
+}
+.top-menu-btn{
+	position: absolute;
+	height: 60px;
+	width: 60px;
+	background-color: #656;
+	top: 20px;
+}
+#top-menu-left-btn1{
+	right: 70%;
+	background-image: url(topbtn1.gif);
+	background-size: 100%;
+	background-position: 0,-40px;
+}
+#top-menu-left-btn2{
+	right: 40%;
+	background-image: url(topbtn2.gif);
+	background-size: 100%;
+}
+#top-menu-right{
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	left: 50%;
+	background-color: #444;
+	z-index: -1;
+	max-width: 598px;
+	min-width: 260px;
+}
+#top-menu-right-btn1{
+	left: 40%;
+	background-image: url(topbtn3.gif);
+	background-size: 180%;																														background-position: -25px,0;
+}
+#top-menu-right-btn2{
+	left: 70%;
+	background-image: url(topbtn4.gif);
+	background-size: 100%;
+}

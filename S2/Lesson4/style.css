@@ -1,0 +1,30 @@
+body{
+	background-image: url(https://images.wallpaperscraft.com/image/moon_clouds_sky_black-and-white_6442_1920x1080.jpg);
+	text-shadow: #550000 3px 3px 5px;
+}
+
+ol{
+	background-color: rgba(68, 85, 117, 0.5);
+	padding: 15px;
+	padding-left: 40px;
+	border-radius: 20px;
+}
+
+li{
+	background-color: rgba(68, 85, 117, 0.5);
+	padding: 15px;
+	border-radius: 20px;
+	margin: 10px;
+	transition-duration: 1s;
+	transition-property: transform;
+	font-size: 20px;
+	font-family: cursive;
+}
+
+li:hover{
+	transform: translate(10px,0);
+}
+
+ol li img{
+	height: 100px;
+}

@@ -1,0 +1,106 @@
+@font-face{
+	font-family: font1;
+	src: url("1.ttf");
+}
+@font-face{
+	font-family: font2;
+	src: url("2.ttf");
+}
+body{
+	margin: 0;
+}
+#top-menu{
+	position: relative;
+	width: 100%;
+	height: 50px;
+	background-color: #222;
+}
+#box1{
+	width: 100%;
+}
+.box1-img{
+	width: 100%;
+}
+.top-menu-btn{
+	position: relative; 
+	padding: 10px;
+	height: 30px;
+	color: #aaa;
+	font-size: 25px;
+	display: inline-block;
+	overflow: hidden;
+	transition-duration: 200ms;
+	transition-property: color;
+}
+.top-menu-btn:hover{
+	color: #fff;
+}
+#top-menu a{
+	text-decoration: none;
+}
+.line{
+	position: absolute;
+	width: 100%;
+	height: 15%;
+	background-color: #241;
+	top: 100%;
+	left: 0;
+	transition-duration: 200ms;
+	transition-property: transform;
+}
+.top-menu-btn:hover .line{
+	transform: translateY(-100%);
+}
+.top-menu-btn-img{
+	height: 40px;
+	margin: -5px;
+}
+.box1-element-title{
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+.box1-element-title p{
+	font-family: font2;
+	font-size: 40px;
+	color: #fff;
+	text-shadow: 0 0 20px #000811;
+}
+#box1-element1-title{
+	left: 65%;
+	text-align: right;
+}
+.switch-btn{
+	background-color: #88f;
+	padding: 10px;
+	font-size: 25px;
+	color: #fff;
+	text-shadow: 0 0 10px #000;
+	display: inline-block;
+	transition-duration: 200ms;
+	transition-property: transform;
+}
+.switch-btn:hover{
+	transform: skew(-5deg) translateX(2.1px);
+}
+.switch-btn div{
+	transition-duration: 200ms;
+	transition-property: transform;
+}
+.switch-btn:hover div{
+	transform: skew(5deg);
+}
+.box1-element-title-img{
+	max-width: 500px;
+}
+#trailer{
+	position: absolute;
+	z-index: 1;
+	right: 100px;
+	bottom: 100px;
+	background-color: rgba(0,0,0,.5);
+	border: solid #333 3px;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+}

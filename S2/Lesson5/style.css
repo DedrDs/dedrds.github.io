@@ -1,0 +1,42 @@
+.m{
+	background-color: #ff0000;
+	height: 190px;
+	width: 300px;
+	margin: 10px;
+	border-radius: 20px;
+	box-shadow: 0 0 20px #000 inset;
+	overflow: hidden;
+	display: inline-block;
+}
+.i{
+	width: 100%;
+	height: 50px;
+	background-color: #800050;
+	border-radius: 20px;
+	box-shadow: 0 0 20px #000 inset;
+	position: relative;
+	top: -50px;
+	transition-duration: 3s;
+}
+.m:hover .i{
+	transform: translate(0,50px);
+	border-radius: 0;
+}
+img{
+	width: 100%;
+	position: relative;
+	top: 140px;
+	transition-duration: 3s;
+	border-radius: 20px;
+}
+.m:hover img{
+	transform: translate(0,-140px);
+	border-radius: 0;
+}
+body{
+	font-size: 30px;
+	font-family: cursive;
+	text-align: center;
+	background-image: url(7.jpg);
+	background-size: 100%;
+}

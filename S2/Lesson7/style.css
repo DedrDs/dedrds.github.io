@@ -1,0 +1,79 @@
+body{
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	padding-top: 50px;
+	background-color: #ddd;
+}
+#top-menu{
+	height: 50px;
+	width: 100%;
+	position: fixed;
+	background-color: #222;
+	top: 0;
+	left: 0;
+}
+#logo{
+	height: 504px;
+	width: 1196px;
+	background-image: url(logo.jpg);
+	background-size: 100%;
+}
+#buttons{
+	height: 100px;
+	width: 1080px;
+	background-color: #222;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.btn{
+	height: 100px;
+	width: 360px;
+	position: absolute;
+	transition-duration: 500ms;
+}
+#btn1{
+	background-color: #700000;
+	left: 0;
+}
+#btn2{
+	background-color: #007000;
+	left: 360px;
+}
+#btn3{
+	background-color: #000070;
+	left: 720px;
+}
+.btn:hover{
+	padding: 5px;
+	z-index: 1;
+	transform: translate(-5px,-5px);
+}
+#btn1:hover{
+	background-color: #222;
+}
+#btn2:hover{
+	background-color: #222;
+}
+#btn3:hover{
+	background-color: #222;
+}
+.btn-text{
+	height: 100px;
+	width: 260px;
+	position: absolute;
+	color: #fff;
+	text-align: center;
+}
+.btn-img{
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	left: 260px;
+}
+.btn-img-img{
+	max-height: 200%;
+	max-width: 100%;
+}

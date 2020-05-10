@@ -1,0 +1,116 @@
+body{
+	margin: 0;
+}
+.box{
+	position: relative;
+	width: 100%;
+}
+.box-img{
+	width: 100%;
+}
+#right-menu{
+	position: fixed;
+	right: 0;
+	width: 40px;
+	z-index: 1000;
+	top: 100px;
+	bottom: 100px;
+}
+.right-menu-btn{
+	position: relative;
+	height: 40px;
+	width: 40px;
+}
+.romb{
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	margin: 5px;
+}
+.romb-top{
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 15px solid rgba(0,0,0,.8);
+}
+.romb-bottom{
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 15px solid rgba(0,0,0,.8);
+}
+.right-menu-btn-text{
+	position: absolute;
+	right: 100%;
+	width: 180px;
+	padding: 5px;
+	font-size: 25px;
+	text-align: right;
+	color: #aaa;
+	text-shadow: 0 0 10px #000;
+	text-transform: uppercase;
+	transform: translateX(50%) scaleX(0);
+	transition-duration: 200ms;
+	transition-property: transform;
+}
+#right-menu:hover .right-menu-btn-text{
+	transform: translateX(0) scaleX(1);
+}
+.middle{
+	background: linear-gradient(to right, #012, #483820, #012);
+	height: 5px;
+	width: 100%;
+	margin-top: -5px;
+}
+#ramka{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+}
+#ramka .line{
+	position: absolute;
+	background-color: rgba(153, 119, 68, 0.8);
+}
+#ramka .hor-line{
+	height: 2px;
+	left: 100px;
+	right: 100px;
+}
+#ramka .ver-line{
+	width: 2px;
+	top: 100px;
+	bottom: 100px;
+}
+#ramka .top-line{
+	top: 40px;
+}
+#ramka .down-line{
+	bottom: 40px;
+}
+#ramka .left-line{
+	left: 40px;
+}
+#ramka .right-line{
+	right: 40px;
+}
+.h-romb{
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	margin: 10px;
+	opacity: 0;
+	transition-duration: 200ms;
+	transition-property: opacity;
+}
+.h-romb-top{
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #fff;
+}
+.h-romb-bottom{
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #fff;
+}
+.right-menu-btn:hover .h-romb{
+	opacity: 1;
+}
