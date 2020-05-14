@@ -1,0 +1,103 @@
+body{
+	margin: 0;
+}
+#top-menu{
+	background-color: #000;
+	min-height: 25px;
+	width: 100%;
+}
+#logo{
+	height: 250px;
+	width: 90%;
+	background-color: #98f731;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 5%;
+	display: flex;
+	justify-content: center;
+}
+#main{
+	background-color: #000;
+	width: 100%;
+	height: 500px;
+}
+.logo-text{
+	height: 400px;
+	width: 400px;
+	overflow: hidden;
+	display: inline-block;
+}
+.logo-img{
+	height: 400px;
+	width: 400px;
+	overflow: hidden;
+	display: inline-block;
+
+}
+img{
+	height: 100%;
+}
+#lines{
+	height: 26px;
+	width: 26px;
+
+}
+.line{
+	width: 20px;
+	height: 2px;
+	background-color: #fff;
+	position: relative;
+	left: 3px;
+	transition-duration: 1s;
+}
+.line1{
+	top: 5px;
+}
+.line2{
+	top: 10px;
+}
+.line3{
+	top: 15px;
+}
+#lines:hover .line1{
+	transform: rotate(45deg) translate(5px,5px);
+}
+#lines:hover .line2{
+	transform: scaleX(0);
+}
+#lines:hover .line3{
+	transform: rotate(-45deg) translate(5px,-5px);
+}
+#top-menu-list{
+	height: 0;
+	min-width: 200px;
+	background-color: rgba(64,64,64,0.5);
+	overflow: hidden;
+	position: relative;
+	top: 100%;
+	transition-duration: 1s;
+}
+#lines:hover #top-menu-list{
+	height: 65px;
+}
+#top-menu-list a{
+	text-decoration: none;
+}
+.btn .text-line{
+	position: sticky;
+	bottom: 0;
+	height: 2px;
+	background-color: #ff0000;
+	width: 100%;
+	transition-duration: 1s;
+	transition-property: transform;
+}
+.btn:hover .text-line{
+	transform: scale(0,1);
+}
+.btn{
+	padding-left: 0.5em;
+	font-size: 16px;
+	color: red;
+	max-width: 55px;
+}

@@ -1,0 +1,110 @@
+body{
+	background-color: #dfd;
+	margin: 0;
+	padding-top: 100px;
+}
+#top-menu{
+	width: 100%;
+	height: 100px;
+	background-color: #222;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10000;
+}
+#logo{
+	height: 512px;
+	width: 1280px;
+	background-image: url(1.jpg);
+	background-size: 100%;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+#buttons{
+	height: 150px;
+	width: 1200px;
+	background-color: #222;
+	left: 0;
+	right: 0;
+	margin: auto;
+	position: relative;
+}
+.btn{
+	color: #fff;
+	height: 120px;
+	width: 370px;
+	padding: 15px;
+	position: absolute;
+	transition-duration: 100ms;
+	font-size: 25px;
+}
+#btn1{
+	background-image: linear-gradient( to bottom, #700, #200);
+	left: 0;
+}
+#btn2{
+	background-image: linear-gradient( to bottom, #070, #020);
+	left: 400px;
+}
+#btn3{
+	background-image: linear-gradient( to bottom, #007, #002);
+	left: 800px;
+}
+.btn:hover{
+	padding: 20px;
+	z-index: 1;
+	transform: translate(-5px,-5px);
+}
+#btn1:hover{
+	background-image: linear-gradient( to bottom, #222, #222);
+}
+#btn2:hover{
+	background-image: linear-gradient( to bottom, #222, #222);
+}
+#btn3:hover{
+	background-image: linear-gradient( to bottom, #222, #222);
+}
+.btn-text{
+	height: 130px;
+	width: 220px;
+	position: absolute;
+	overflow: hidden;
+}
+.btn-img{
+	height: 150px;
+	width: 150px;
+	position: absolute;
+	right: 15px;
+}
+.btn-img2{
+	max-height: 100%;
+	max-width: 100%;
+}
+#top-menu-btn-left{
+	height: 70px;
+	width: 70px;
+	margin: 15px;
+	overflow: hidden;
+	border-radius: 50%;
+	position: absolute;
+}
+#top-menu-btn-left-gif{
+	height: 200%;
+	width: 200%;
+	position: relative;
+	left: -50%;
+	top: -50%;
+}
+#top-menu-logo{
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 150px;
+	width: 300px;
+}
+#top-menu-logo-img{
+	height: 100%;
+}

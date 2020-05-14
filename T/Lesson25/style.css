@@ -1,0 +1,69 @@
+@font-face{
+	font-family: font1;
+	src: url("1.ttf");
+}
+body{
+	background-color: #000;
+	margin: 0;
+}
+#top-menu{
+	position: sticky;
+	height: 50px;
+	width: 100%;
+	background-color: rgba(56, 56, 64,0.8);
+	overflow-y: hidden;
+}
+.top-menu-el{
+	display: inline-block;
+	vertical-align: middle;
+	height: 30px;
+	text-align: center;
+	padding: 10px;
+	font-size: 25px;
+	font-family: font1;
+	position: relative;
+}
+.line{
+	position: absolute;
+	background-color: #ff6a13;
+	width: 100%;
+	height: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0.5;
+	transition-duration: 299ms;
+	transition-property: height, opacity;
+}
+.top-menu-btn:hover .line{
+	height: 15%;
+	opacity: 1;
+}
+#top-menu a{
+	text-decoration: none;
+}
+.top-menu-btn{
+	color: #aaa;
+	transition-duration: 299ms;
+	transition-property: color;
+}
+.top-menu-btn:hover{
+	color: #fff;
+}
+.top-menu-el-img{
+	height: 100%;
+}
+.box{
+	position: relative;
+	width: 100%;
+	min-width: 600px;
+	overflow-x: hidden;
+}
+.box1-img{
+	width: 100%;
+}
+#box1-img1{
+	display: block;
+}
+#box1-img2{
+	display: none;
+}

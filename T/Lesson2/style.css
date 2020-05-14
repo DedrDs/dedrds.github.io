@@ -1,0 +1,35 @@
+body{
+	background-color: yellow;
+}
+
+div{
+	width: 500px;
+	height: 500px;
+	margin: 50px;
+	color: white;
+
+
+	border: solid white 2px; /*рамка сплошная белая толщиной 2 пикселя*/
+	
+	border-radius: 50px; /*округлость по углам 50 пикселей*/
+	padding: 50px; /*отступ внутрь*/
+
+	transition: 0.5s all;
+}
+
+div:hover{
+	transform: rotate(360deg);
+}
+
+#d1{
+	background-color: red;
+}
+
+#d2{
+	background-color: orange;
+	color: black;
+}
+
+#d3{
+	background-color: black;
+}

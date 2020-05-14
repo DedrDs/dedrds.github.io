@@ -1,0 +1,16 @@
+div{
+	height: 200px;
+	width: 200px;
+	background-color: green;
+	overflow: hidden;
+	transition: 5s all;
+	border-radius: 50%;
+}
+
+div:hover{
+	transform: rotate(3600deg) scale(0.5);
+}
+
+img{
+	height: 100%;
+}
