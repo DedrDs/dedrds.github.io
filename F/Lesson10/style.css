@@ -1,0 +1,443 @@
+body{
+	margin: 0;
+	padding-top: 102px;
+}
+#top-menu{
+	height: 100px;
+	width: 100%;
+	background-color: #333;
+	border-bottom: solid #000 2px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100000;
+}
+#logo{
+	height: 540px;
+	width: 1280px;
+	background-image: url(space.jpg);
+	background-size: 100%;
+	margin: auto;
+	left: 0;
+	right: 0;
+	position: relative;
+}
+#buttons{
+	height: 150px;
+	width: 1200px;
+	background-color: #aaa;
+	position: relative;
+	margin: auto;
+	left: 0;
+	right: 0;
+}
+#buttons a{
+	color: #fff;
+	text-decoration: none;
+}
+.button{
+	height: 130px;
+	width: 380px;
+	text-align: center;
+	position: absolute;
+	padding: 6px;
+	font-size: 25px;
+	transition-duration: 100ms;
+}
+.button:hover{
+	padding: 11px;
+	transform: translate(-5px,-5px);
+	z-index: 1;
+}
+.btn1{
+	background-color: #550000;
+	border: inset #ff0000 4px;
+	left: 0;
+}
+.btn2{
+	background-color: #005500;
+	border: inset #00ff00 4px;
+	left: 400px;
+}
+.btn3{
+	background-color: #000055;
+	border: inset #0000ff 4px;
+	left: 800px;
+}
+#top-menu-gif{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: 150%;
+	border-radius: 50%;
+	z-index: 100001;
+}
+.btn-text{
+	height: 130px;
+	width: 250px;
+}
+.btn-img{
+	height: 130px;
+	width: 130px;
+	position: relative;
+	top: -130px;
+	left: 250px;
+}
+.btn-img2{
+	max-width: 100%;
+	max-height: 100%;
+}
+#top-menu-left{
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	right: 50%;
+	min-width: 270px;
+	max-width: 750px;
+}
+#top-menu-right{
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	left: 50%;
+	min-width: 270px;
+	max-width: 750px;
+}
+#top-menu-left-btn1{
+	position: absolute;
+	top: 15px;
+	right: 70%;
+	height: 70px;
+	width: 70px;
+	background-image: url(tm1.jpg);
+	background-size: 100%;
+	border-radius: 50%;
+}
+#top-menu-right-btn2{
+	position: absolute;
+	top: 15px;
+	left: 70%;
+	height: 70px;
+	width: 70px;
+	background-image: url(tm1.jpg);
+	background-size: 100%;
+	border-radius: 50%;
+}
+#top-menu-left-btn2{
+	position: absolute;
+	top: 15px;
+	right: 40%;
+	height: 70px;
+	width: 70px;
+	background-image: url(tm1.jpg);
+	background-size: 100%;
+	border-radius: 50%;
+}
+#top-menu-right-btn1{
+	position: absolute;
+	top: 15px;
+	left: 40%;
+	height: 70px;
+	width: 70px;
+	background-image: url(tm1.jpg);
+	background-size: 100%;
+	border-radius: 50%;
+}
+#top-menu-left-btn1:hover{
+	background-image: url(tm1.gif);
+}
+#top-menu-left-btn2:hover{
+	background-image: url(tm1.gif);
+}
+#top-menu-right-btn1:hover{
+	background-image: url(tm1.gif);
+}
+#top-menu-right-btn2:hover{
+	background-image: url(tm1.gif);
+}
+#logo-btn{
+	width: 440px;
+	height: 100px;
+	border: inset #009 5px;
+	background-color: #00a;
+	position: absolute;
+	top: 215px;
+	left: 115px;
+	text-align: center;
+	color: #fff;
+	font-size: 80px;
+	transition-duration: 500ms;
+	transition-property: transform;
+}
+#logo-btn:hover{
+	transform: scale(1.1);
+}
+#logo-descr{
+	width: 200px;
+	height: 30px;
+	background-color: #333;
+	position: absolute;
+	top: 345px;
+	left: 240px;
+	text-align: center;
+	color: #fff;
+	font-size: 23px;
+}
+#logo-descr:hover{
+	transform: scaleX(1.1);
+}
+#content{
+	width: 1000px;
+	min-height: 1150px;
+	border: solid #888 1px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	position: relative;
+}
+#content-buttons{
+	width: 100%;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	transform: translateY(50px);
+}
+.content-btn{
+	padding: 25px;
+	height: 50px;
+	min-width: 100px;
+	display: inline-block;
+	text-align: center;
+	font-size: 40px;
+}
+.content-btn:hover{
+	background-color: #ddd;
+}
+.feed{
+	width: 1000px;
+	height: 0;
+	background-color: #bbb;
+	position: absolute;
+	left: 0;
+	top: 100px;
+	transition-duration: 100ms;
+	transition-property: height;
+	overflow: hidden;
+}
+.content-btn:hover .feed{
+	height: 1000px;
+}
+.feed-box{
+	width: 242px;
+	height: 242px;
+	background-color: #999;
+	display: inline-block;
+}
+#feed1-box1{
+	background-image: url(https://media.wired.com/photos/5d3b6817d18f7c00094eccd6/4:3/w_3599,h_2699,c_limit/01_SPoW_072719.jpg);
+	background-size: 150%;
+}
+#feed1-box2{
+	background-image: url(https://spacenews.com/wp-content/uploads/2018/05/24359364107_152b0152ff_k-879x485.jpg);
+	background-size: 190%;
+}
+#feed1-box3{
+	background-image: url(http://blogs.esa.int/space19plus/files/2019/03/nebula.jpg);
+	background-size: 180%;
+}
+#feed1-box4{
+	background-image: url(https://cdn.mos.cms.futurecdn.net/qqQFZdAYCDxMvVmyPGSubk.jpg);
+	background-size: 140%;
+}
+#feed1-box5{
+	background-image: url(https://thenypost.files.wordpress.com/2019/08/space-signals-3246.jpg);
+	background-size: 140%;
+}
+#feed1-box6{
+	background-image: url(https://ichef.bbci.co.uk/news/912/cpsprodpb/420D/production/_104990961_gettyimages-481229372.jpg);
+	background-size: 180%;
+}
+#feed1-box7{
+	background-image: url(https://images2.minutemediacdn.com/image/upload/c_crop,h_1190,w_2121,x_0,y_134/f_auto,q_auto,w_1100/v1559847832/shape/mentalfloss/24107-istock-1040334020.jpg);
+	background-size: 100%;
+}
+#feed1-box8{
+	background-image: url(https://bsolive.com/wp-content/uploads/2019/06/Space-and-Exploration.jpg);
+	background-size: 100%;
+}
+#feed1-box9{
+	background-image: url(https://www.lockheedmartin.com/content/dam/lockheed-martin/space/photo/feature/ahead/Ahead_of_the_Curve_4k.jpg.pc-adaptive.full.medium.jpeg);
+	background-size: 100%;
+}
+#feed1-box10{
+	background-image: url(https://scx1.b-cdn.net/csz/news/800/2019/space.jpg);
+	background-size: 100%;
+}
+#feed1-box11{
+	background-image: url(https://ichef.bbci.co.uk/news/660/cpsprodpb/7D66/production/_105120123_gettyimages-831502910.jpg);
+	background-size: 100%;
+}
+#feed1-box12{
+	background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-523367172-1568809023.jpg);
+	background-size: 100%;
+}
+#feed1-box13{
+	background-image: url(https://cdn.images.express.co.uk/img/dynamic/151/590x/Space-news-astronomers-Milky-Way-galaxy-violently-consumed-another-galaxy-1157335.jpg);
+	background-size: 100%;
+}
+#feed1-box14{
+	background-image: url(https://www.openaccessgovernment.org/wp-content/uploads/2019/09/dreamstime_xxl_123015144.jpg);
+	background-size: 100%;
+}
+#feed1-box15{
+	background-image: url(https://www.pbs.org/wgbh/nova/media/images/nova-wonders-whats-the-universe-made-of-hero_.width-2000.jpg);
+	background-size: 100%;
+}
+#feed1-box16{
+	background-image: url(https://spacenews.com/wp-content/uploads/2018/04/SST-Trifid-Nebula-879x485.png);
+	background-size: 100%;
+}
+#feed2-box1{
+	background-image: url(https://assets3.thrillist.com/v1/image/2794471/size/sk-2017_04_standard_listing_desktop.jpg);
+	background-size: 100%;
+}
+#feed2-box2{
+	background-image: url(https://www.sciencealert.com/images/2018-12/processed/ExpandingBlackHoleIn_web_600.jpg);
+	background-size: 100%;
+}
+#feed2-box3{
+	background-image: url(https://en.es-static.us/upl/2019/10/bubbles-gas-dust-Spitzer-2019.gif);
+	background-size: 100%;
+}
+#feed2-box4{
+	background-image: url(https://www.syfy.com/sites/syfy/files/styles/1200x680/public/2019/07/screen-shot-2019-07-09-at-3.15.31-pm.png);
+	background-size: 100%;
+}
+#feed2-box5{
+	background-image: url(https://www.ctvnews.ca/polopoly_fs/1.4011871.1531487420!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg);
+	background-size: 100%;
+}
+#feed2-box6{
+	background-image: url(https://www.globallyrecruit.com/wp-content/uploads/2019/07/1070382715.jpg);
+	background-size: 100%;
+}
+#feed2-box7{
+	background-image: url(https://www.scitecheuropa.eu/wp-content/uploads/2019/07/ClaudioVentrella.jpg);
+	background-size: 100%;
+}
+#feed2-box8{
+	background-image: url(https://www.universetoday.com/wp-content/uploads/2018/08/cropped-delta_iv_heavy_streak_composite_edits.jpg);
+	background-size: 100%;
+}
+#feed2-box9{
+	background-image: url(https://www.pbs.org/wgbh/nova/media/original_images/topic-space-flight.jpg);
+	background-size: 100%;
+}
+#feed2-box10{
+	background-image: url(https://www.pbs.org/wgbh/nova/media/original_images/topic-space-flight.jpg);
+	background-size: 100%;
+}
+#feed2-box11{
+	background-image: url(https://secure.i.telegraph.co.uk/multimedia/archive/02357/eso-summary_2357457k.jpg);
+	background-size: 100%;
+}
+#feed2-box12{
+	background-image: url(https://www.universetoday.com/wp-content/uploads/2018/06/cropped-gw170817_illus2-1.jpg);
+	background-size: 100%;
+}
+#feed2-box13{
+	background-image: url(https://s3.amazonaws.com/images.spaceref.com/news/2019/ooPIA23403_hires.jpg);
+	background-size: 100%;
+}
+#feed2-box14{
+	background-image: url(https://cdn.images.express.co.uk/img/dynamic/151/590x/space-1191542.jpg);
+	background-size: 100%;
+}
+#feed2-box15{
+	background-image: url(https://cdn.images.express.co.uk/img/dynamic/151/590x/space-1191542.jpg);
+	background-size: 100%;
+}
+#feed2-box16{
+	background-image: url(https://techcrunch.com/wp-content/uploads/2018/07/space.jpg);
+	background-size: 100%;
+}
+#feed3-box1{
+	background-image: url(https://fkr.spb.ru/wp-content/uploads/2018/04/space-genetics-is-essential-making-life-in-space-work.jpeg);
+	background-size: 100%;
+}
+#feed3-box1{
+	background-image: url(https://fkr.spb.ru/wp-content/uploads/2018/04/space-genetics-is-essential-making-life-in-space-work.jpeg);
+	background-size: 100%;
+}
+#feed3-box2{
+	background-image: url(https://www.universetoday.com/wp-content/uploads/2009/06/M31_09-01-2011.jpg);
+	background-size: 100%;
+}
+#feed3-box3{
+	background-image: url(https://www.studioroosegaarde.net/data/images/2018/06/1610/129544/spacewastedaannew2.jpg);
+	background-size: 100%;
+}
+#feed3-box4{
+	background-image: url(https://cdn.mos.cms.futurecdn.net/LFq3F72EYNqZCoA5Ckw26o.jpg);
+	background-size: 100%;
+}
+#feed3-box5{
+	background-image: url(https://www.telegraph.co.uk/content/dam/science/2017/06/28/the-amount-of-space-junk-around-earth-has-hit-a-critical-density-and-it-could-jeopardize-our-space-missions_trans_NvBQzQNjv4BquLmHKNaT2OspieeUjldj09StvqqzYkOHO8gIF2vtD9M.jpg);
+	background-size: 100%;
+}
+#feed3-box6{
+	background-image: url(https://cdn.theatlantic.com/assets/media/img/mt/2019/08/Astronaut_Holding_DoubleTree_Cookie/lead_720_405.jpg);
+	background-size: 100%;
+}
+#feed3-box7{
+	background-image: url(https://www.satellitetoday.com/wp-content/uploads/2019/06/Screen-Shot-2019-06-13-at-5.50.12-PM-800x490.png);
+	background-size: 100%;
+}
+#feed3-box8{
+	background-image: url(https://i.ytimg.com/vi/h3OpppJvbSs/maxresdefault.jpg);
+	background-size: 100%;
+}
+#feed3-box9{
+	background-image: url(https://i.ytimg.com/vi/XBPjVzSoepo/maxresdefault.jpg);
+	background-size: 100%;
+}
+#feed3-box10{
+	background-image: url(https://www.pbs.org/wgbh/nova/media/original_images/topic-space-flight.jpg);
+	background-size: 100%;
+}
+#feed3-box11{
+	background-image: url(https://www.thesun.co.uk/wp-content/uploads/2019/04/NINTCHDBPICT000481738569.jpg);
+	background-size: 100%;
+}
+#feed3-box12{
+	background-image: url(https://www.geek.com/wp-content/uploads/2018/04/space-myersalex216Pixabay-625x352.jpg);
+	background-size: 100%;
+}
+#feed3-box13{
+	background-image: url(https://images.immediate.co.uk/production/volatile/sites/4/2019/09/GettyImages-471296532-c-db7bc08.jpg);
+	background-size: 100%;
+}
+#feed3-box14{
+	background-image: url(https://ak5.picdn.net/shutterstock/videos/23818045/thumb/1.jpg);
+	background-size: 100%;
+}
+#feed3-box15{
+	background-image: url(https://metro.co.uk/wp-content/uploads/2018/04/sei_5965900.jpg);
+	background-size: 100%;
+}
+#feed3-box16{
+	background-image: url(https://cdn.images.express.co.uk/img/dynamic/151/750x445/1196591.jpg);
+	background-size: 100%;
+}
+#feed3-box1{
+	background-image: url(https://www.imperial.ac.uk/ImageCropToolT4/imageTool/uploaded-images/shutterstock_515581882--tojpeg_1564661136542_x2.jpg);
+	background-size: 100%;
+}
+#info{
+	width: 100%;
+	height: 200px;
+	background-color: #000;
+	color: #fff;
+}

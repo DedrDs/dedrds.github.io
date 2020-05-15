@@ -1,0 +1,78 @@
+
+;(function(win, doc, style, timeout) {
+  var STYLE_ID = 'at-body-style';
+
+  function getParent() {
+    return doc.getElementsByTagName('head')[0];
+  }
+
+  function addStyle(parent, id, def) {
+    if (!parent) {
+      return;
+    }
+
+    var style = doc.createElement('style');
+    style.id = id;
+    style.innerHTML = def;
+    parent.appendChild(style);
+  }
+
+  function removeStyle(parent, id) {
+    if (!parent) {
+      return;
+    }
+
+    var style = doc.getElementById(id);
+
+    if (!style) {
+      return;
+    }
+
+    parent.removeChild(style);
+  }
+
+  addStyle(getParent(), STYLE_ID, style);
+  setTimeout(function() {
+    removeStyle(getParent(), STYLE_ID);
+  }, timeout);
+}(window, document, "body {opacity: 0 !important}", 1000));
+var HUB = HUB || {};
+
+(function($, HUB) {
+    
+    
+    var init = function() {
+        
+        //initPurchase();
+        refreshLocsec();
+    };
+    
+    /*var initPurchase = function() {
+        
+        var $btn = $(".cod-game-header-container .desktop-header .nav-right .purchase a");
+
+        $btn.click(function(e) {
+
+            e.preventDefault();
+            var $target = $(".bundle-descriptions-list");
+
+            $('html,body').animate({
+                scrollTop: $target.offset().top - 50
+            }, 500);
+            
+        });
+
+    };*/
+    
+    var refreshLocsec = function(){
+        //display:none set on locale selector in core.css
+        setTimeout(function(){
+            $(".atvi-locale-selector").css("opacity", "1");
+        }, 1000);
+
+    }
+    
+    
+    $(init);
+    
+})(jQuery, HUB);

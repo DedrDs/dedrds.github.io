@@ -1,0 +1,296 @@
+body{
+	margin: 0;
+	padding-top: 50px;
+	background-color: #444;
+}
+#top-menu{
+	width: 100%;	
+	height: 50px;
+	background-image: url(tm.jpg);
+	position: fixed;
+	top: 0;
+	z-index: 100000;
+}
+#top-menu-left{
+	left: 0;
+	height: 100%;
+	position: absolute;
+}
+#tml-logo{
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#tml-logo-img{
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.tml-btn{
+	padding: 10px;
+	height: 30px;
+	display: inline-block;
+	left: 145px;
+	position: relative;
+	color: #aaa;
+	font-size: 25px;
+}
+#top-menu a{
+	text-decoration: none;
+}
+#tml-btn1-vec{
+	position: absolute;
+	height: 16px;
+	top: 17px;
+	right: 17px;
+	transition-duration: 200ms;
+	transition-property: transform;
+}
+#tml-btn1{
+	width: 120px;
+}
+
+#tml-btn1:hover #tml-btn1-vec{
+	transform: rotate(180deg);
+}
+#tml-btn1-menu{
+	position: absolute;
+	background-color: #000;
+	left: 0;
+	top: 100%;
+	width: 250px;
+	height: 0;
+	overflow: hidden;
+	transition-duration: 200ms;
+	transition-property: height;
+}
+.tml-btn1-field{
+	padding: 10px;
+	height: 30px;
+	font-size: 25px;
+}
+#tml-btn1:hover #tml-btn1-menu{
+	height: 200px;
+}
+#top-menu-right{
+	right: 0;
+	height: 100%;
+	position: absolute;
+	color: #fff;
+	font-size: 25px;
+}
+.tmr-btn{
+	display: inline-block;
+	color: #aaa;
+	font-size: 25px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#tmr-btn1:hover{
+	color: #fff;
+}
+#tmr-btn2:hover{
+	color: #fff;
+}
+#tmr-btn3{
+	padding: 10px;
+}
+#tmr-btn3:hover{
+	color: #fff;
+	background-color: rgba(64,64,64,0.5);
+}
+.pretty-btn{
+	border: solid rgba(192,192,192,0.5) 1px;
+	box-shadow: 0 0 25px rgba(192,192,192,0.5) inset;
+	height: 30px;
+	font-size: 25px;
+	padding: 9px;
+	color: rgb(192,192,192);
+	transition-duration: 200ms;
+	transition-property: color text-shadow;
+	position: relative;
+	text-align: center;
+}
+.pretty-btn:hover{
+	color: rgb(255,255,255);
+	text-shadow: 0 0 10px rgb(255,255,255);
+}
+.pretty-btn-line{
+	height: 2px;
+	background-color: rgb(255,255,255);
+	left: 0;
+	right: 0;
+	margin: auto;
+	position: absolute;
+	width: 0;
+	transition-duration: 200ms;
+	transition-property: width box-shadow;
+}
+.pretty-btn-line-top{
+	top: -1px;
+}
+.pretty-btn-line-bottom{
+	bottom: -1px;
+}
+.pretty-btn:hover .pretty-btn-line{
+	width: 100%;
+	box-shadow: 0 0 10px rgb(255,255,255);
+}
+#box1{
+	width: 100%;
+	position: relative;
+}
+#box1-img{
+	width: 100%;
+}
+#box1-title{
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	width: 350px;
+	padding-top: 110px;
+	padding-bottom: 50px;
+	font-size: 30px;
+	height: 35px;
+	color: #fb0;
+}
+#box1-title a{
+	text-decoration: none;
+}
+#box1-title-img{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.box1-title-btn{
+	display: inline-block;
+	width: 150px;
+}
+#box2{
+	position: relative;
+	width: 100%;
+	height: 720px;
+}
+#box2-left{
+	position: absolute;
+	width: 70%;
+	height: 100%;
+	left: 0;
+}
+#box2-right{
+	position: absolute;
+	width: 30%;
+	height: 100%;
+	background-color: #111;
+	right: 0;
+}
+.box2-left-title{
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	overflow: hidden;
+}
+.box2-left-img{
+	width: 640px;
+	min-width: 100%;
+	min-height: 100%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+#box2-left-title1{
+	left: 0;
+	top: 0;
+}
+#box2-left-title2{
+	left: 50%;
+	top: 0;
+}
+#box2-left-title3{
+	left: 0;
+	top: 50%;
+}
+#box2-left-title4{
+	left: 50%;
+	top: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 1024px){
+	body{
+		padding-top: 100px;
+	}
+	#top-menu{
+		height: 100px;
+	}
+	#top-menu-left{
+		height: 50%;
+	}
+	#top-menu-right{
+		top: 50%;
+		height: 50%;
+	}
+}
+@media(max-width: 720px){
+	body{
+		padding-top: 50px;
+	}
+	#top-menu{
+		height: 50px;
+	}
+	#top-menu-left{
+		height: 100%;
+	}
+	#top-menu-right{
+		top: 0;
+		height: 100%;
+	}
+	#tmr-btn3{
+		display: none;
+	}
+	#tml-btn2{
+		display: none;
+	}
+	#tml-logo{
+		display: none;
+	}
+	.tml-btn{
+		left: 0;
+	}
+}
+@media(max-width: 580px){
+	#tml-btn3{
+		display: none;
+	}
+}
+@media(max-width: 460px){
+	#tmr-btn2{
+		display: none;
+	}
+	#box1-title{
+		display: none;
+	}
+}
+@media(max-width: 340px){
+	body{
+		padding-top: 0;
+	}
+	#top-menu{
+		display: none;
+	}
+}

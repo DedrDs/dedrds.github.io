@@ -1,0 +1,290 @@
+
+
+var MW = MW || {};
+MW.wtb = MW.wtb || {};
+
+(function($, ATVI) {
+
+    var where = ATVI.components.wheretobuy,
+        MutationObserver = window.MutationObserver || window.WebKitMutationObserver,
+        $con,
+        observerObj = {};
+
+
+    var init = function() {
+        $(".atvi-wheretobuy").each(function(i, o) { console.log(i + ": " + o.id) });
+        $con = $('#wtb-dig-phys');
+        console.log("inited: " + $con.hasClass("inited"));
+        $con.addClass("inited");
+        console.log($con);
+        
+        MW.wtb.initRegionModal($con);
+        observerObj.$targetEls = $con.find('.selection-type-retailerTypes li');
+        observerObj.config = { attributes: true }
+    };
+
+
+    where.onSelectboxCreate = function(context, $el, listObj) {
+        if (ATVI.plugins.selectric && listObj.type == 'select') {
+			$(function() {
+                $el.selectric({ 
+                    disableOnMobile: false,
+                    optionsItemBuilder: function(itemData) {
+                        return '<span data-' + where.constants.DATA_OPTIONID + '="' + itemData.value + '"></span>' + itemData.text;
+                    },
+                    onInit: function() {
+                        filterBundles(context);
+                    }
+                });
+
+                where.checkForLonelyOptions(context);
+            });
+        } else {
+            $el.find('option').each(function() {
+                where.cleanText(this);
+            });
+        }
+    };
+
+    where.onStatusUpdate = function(context, field) {
+        var s = context.status;
+        if (field == 'bundles') {
+			where.updateButtonData(context);
+        }
+        if (s.bundles && s.platforms && s.regions && field == 'retailerTypes') {
+			updatePlatformAvailability(context);
+        }
+        if (s.bundles && s.platforms && s.regions && s.retailerTypes && field != 'bundles') {
+            filterBundles(context);
+            updateBundlesSelect(context);
+            updateTypeAvailability(context);
+            where.updateButtonData(context);
+        }
+        if (field == 'platforms') {
+            if (observerObj.$targetEls) addObservers();
+        }
+        if (field == 'regions' && s.regions) {
+            where.filterPlatformsByRegion(context);
+            MW.wtb.updateCurrentRegionPrompt(context);
+        }
+        if (context.status.bundles && context.status.regions && context.status.platforms) {
+			where.updateForPossibleRows(context, where.widenPossibleRows(context));
+            where.updateButtons(context);
+        }
+    };
+
+    where.filterPlatformsByRegion = function(context) {
+        if (!context.wrapper.find(where.constants.CN_SELECTRICWRAPPER).length) return;
+		var rows = context.config.data.wtb.rows,
+            platforms = context.listsObj.platforms[0].elems,
+            options = context.wrapper.find(where.constants.CN_PLATFORMSENTRY).find('li'),
+            thisRegion = context.status.regions || context.config.opts.defaults.regions,
+            i;
+        options.removeClass('unavailable');
+        for (i = 0; i < platforms.length; i++) {
+			var thisPlatform = platforms[i].id,
+                newPlatformArr;
+            newPlatformArr = $.grep(rows, function(item, j) {
+				return (item.regions == thisRegion && item.platforms == thisPlatform);
+            });
+            if (newPlatformArr.length) continue;
+            else {
+				var $targetEl;
+                $targetEl = options.filter(function() {
+					return $(this).hasClass(thisPlatform);
+                });
+                if ($targetEl.length) $targetEl.addClass('unavailable');
+            }
+        }
+    };
+
+    where.filterPlatformsByBundle = function(context) {
+        return;
+    };
+
+    where.filterBundlesByRegion = function(context) {
+        return;
+    };
+
+    where.checkForLonelyOptions = function(context) {
+		var rows = context.config.data.wtb.rows,
+            obj = context.listsObj;
+
+        $.each(obj, function() {
+            var thisNode = $(this),
+                fieldName = thisNode[0].field,
+                elems = thisNode[0].elems,
+                len = thisNode[0].elems.length,
+                currentBundle = context.status.bundles,
+                thisRegion = context.status.regions || context.config.opts.defaults.regions;
+
+            if (fieldName === 'retailers' && len === 1) {
+                var url = context.listsObj.retailers[0].elems[0].id,
+                    selectWrapper = context.wrapper.find(where.constants.CN_SELECTCONTAINER + where.constants.CN_RETAILERSENTRY).find(where.constants.CN_SELECTRICWRAPPER);
+
+                selectWrapper.find('select').prop('selectedIndex', 1).selectric('refresh');
+                where.updateButtonLonelyRetailer(context, url);
+            }
+        });
+    };
+
+    var updateTypeAvailability = function(context) {
+		var rows = context.config.data.wtb.rows,
+            bundle = context.status.bundles,
+            platform = context.status.platforms,
+            region = context.status.regions || context.config.opts.defaults.regions,
+            rType = context.status.retailerTypes || false,
+            typesArr = ['digital', 'physical'],
+            $typeEls = context.wrapper.find('.selection-type-retailerTypes li'),
+            i;
+
+        if (!bundle || !platform || !region || !rType) return;
+        $typeEls.removeClass('unavailable');
+        for (i = 0; i < typesArr.length; i++) {
+			var thisType = typesArr[i],
+                newTypeArr;
+            newTypeArr = $.grep(rows, function(item) {
+				return (item.regions == region 
+                        && item.platforms == platform
+                        && item.retailer.type == thisType);
+            });
+            if (newTypeArr.length) continue;
+            else {
+                var $targetOption = $typeEls.filter('.' + thisType);
+                if ($targetOption.length) $targetOption.addClass('unavailable');
+            }
+        }
+
+        if ($typeEls.filter('.' + rType).hasClass('unavailable')) {
+            var newType = (typesArr[0] == rType) ? typesArr[1] : typesArr[0];
+            where.updateStatus(context, 'retailerTypes', newType);
+        }
+    };
+
+    var updatePlatformAvailability = function(context) {
+		var rows = context.config.data.wtb.rows,
+            bundle = context.status.bundles,
+            platform = context.status.platforms,
+            region = context.status.regions || context.config.opts.defaults.regions,
+            rType = context.status.retailerTypes || false,
+            platformsArr = context.config.data.wtb.platforms,
+            typesArr = context.config.data.wtb.retailerTypes,
+            $platformEls = context.wrapper.find('.selection-type-platforms li'),
+            i;
+
+        $platformEls.removeClass('unavailable');
+        for (i = 0; i < platformsArr.length; i++) {
+			var thisPlatform = platformsArr[i].id,
+                newPlatformArr;
+
+			newPlatformArr = $.grep(rows, function(item) {
+				return (item.regions == region
+                        && item.platforms == thisPlatform
+                        && item.retailer.type == rType);
+            });
+            if (newPlatformArr.length) continue;
+            else {
+                var $targetOption = $platformEls.filter('.' + thisPlatform);
+                if ($targetOption.length) $targetOption.addClass('unavailable');
+            }
+        }
+    };
+
+    var updateActiveType = function() {
+		var context = ATVI.components.wheretobuy.getContext($con),
+            typeStatus = context.status.retailerTypes,
+            $typeEls = context.wrapper.find('.selection-type-retailerTypes li');
+		$typeEls.removeClass('selected').filter('.' + typeStatus).addClass('selected');
+    };
+
+    var observerCallback = function(mutationsList, observer) {
+        for (var mutation of mutationsList) {
+            if (mutation.type == 'attributes' && mutation.attributeName == 'class') {
+                updateActiveType();
+            }
+        }
+        observer.disconnect();
+    };
+
+    var filterBundles = function(context) {
+		var rows = context.config.data.wtb.rows,
+            bundles = context.listsObj.bundles[0].elems,
+            platform = context.status.platforms,
+            region = context.status.regions || context.config.opts.defaults.regions,
+            rType = context.status.retailerTypes || false,
+            $bundleOptionEls = context.wrapper.find(where.constants.CN_BUNDLESENTRY).find(where.constants.CN_SELECTRICITEMS).find('li'),
+            i;
+
+        if (!platform || !region || !rType) return;
+        $bundleOptionEls.removeClass(where.constants.HIDE);
+
+        for (i = 0; i < bundles.length; i++) {
+			var thisBundle = bundles[i].id,
+                newBundleArr;
+            newBundleArr = $.grep(rows, function(item) {
+				return (item.regions == region 
+                        && item.bundles == thisBundle 
+                        && item.platforms == platform
+                        && item.retailer.type == rType);
+            });
+            if (newBundleArr.length) continue;
+            else {
+                var $targetOption = $bundleOptionEls.filter(function() {
+                    return $(this).find('span').data(where.constants.DATA_OPTIONID) == thisBundle;
+                });
+                if ($targetOption.length) $targetOption.addClass(where.constants.HIDE);
+            }
+        }
+
+    };
+
+    var updateBundlesSelect = function(context) {
+		var rows = context.config.data.wtb.rows,
+            region = context.status.regions,
+            platform = context.status.platforms,
+            bundleSelectWrapper = context.wrapper.find(where.constants.CN_SELECTCONTAINER + where.constants.CN_BUNDLESENTRY).find(where.constants.CN_SELECTRICWRAPPER),
+            $bundleSelect = bundleSelectWrapper.find('select'),
+            platformSelectWrapper = context.wrapper.find(where.constants.CN_SELECTCONTAINER + where.constants.CN_PLATFORMSENTRY).find(where.constants.CN_SELECTRICWRAPPER),
+            $platformEls = platformSelectWrapper.find('li'),
+            possibleRows = $.grep(rows, function(thing) { return (thing.regions == region && thing.platforms == platform && thing.retailer.type == context.status.retailerTypes) });
+        $platformEls.removeClass('unavailable');
+        if (possibleRows.length) {
+            var idArr = possibleRows.map(function(o) { return o.bundles; }),
+                newBundle = (idArr.indexOf(context.status.bundles) > -1) ? false : true;
+            if (newBundle) {
+				var newBundle = possibleRows[0].bundles,
+                	newIndex = $bundleSelect.children().filter(function() { return $(this)[0].value == newBundle; }).index();
+                where.updateStatus(context, 'bundles', newBundle);
+                $bundleSelect.prop('selectedIndex', newIndex).selectric('refresh');
+                where.buildRetailerList(context, possibleRows);
+            	where.updateImage(context, possibleRows);
+            }
+        } else {
+            var sameBundleRows = $.grep(rows, function(thing) { return (thing.regions == region && thing.bundles == context.status.bundles && thing.retailer.type == context.status.retailerTypes) });
+            if (sameBundleRows.length) {
+                var platformsArr = sameBundleRows.map(function(o) { return o.platforms; }),
+                    newPlatform = (platformsArr[0] == platform) ? platformsArr[1] : platformsArr[0],
+                    newRows = $.grep(rows, function(thing) { return (thing.regions == region && thing.platforms == newPlatform && thing.retailer.type == context.status.retailerTypes) });
+
+                if (newRows.length) {
+                    var bundlesArr = newRows.map(function(o) { return o.bundles; }),
+                        newBundle = (bundlesArr.indexOf(context.status.bundles) > -1) ? false : true;
+                    where.updateStatus(context, 'platforms', newPlatform);
+                }
+            }
+        }
+    };
+
+    var observer = new MutationObserver(observerCallback);
+
+    var addObservers = function() {
+        observerObj.$targetEls.each(function() {
+			observer.observe(this, observerObj.config);
+        });
+    };
+
+
+    $(init);
+
+
+})(jQuery, ATVI);

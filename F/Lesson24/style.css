@@ -1,0 +1,201 @@
+@font-face{
+	font-family: gothic;
+	src: url("1.ttf");
+}
+body{
+	margin: 0;
+}
+#top-menu{
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	left: 80px;
+	height: 40px;
+}
+#top-menu a{
+	text-decoration: none;
+}
+.top-menu-btn{
+	position: relative;
+	display: inline-block;
+	height: 20px;
+	padding: 10px;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-family: gothic;
+}
+#top-menu a{
+	text-decoration: none;
+}
+.tmb-submenu a{
+	text-decoration: none;
+}
+.top-menu-btn:hover{
+	background-color: rgba(32,32,32,.8);
+	padding-left: 9px;
+	padding-right: 9px;
+	border-left: solid #fff 1px;
+	border-right: solid #fff 1px;
+}
+.top-menu-btn .text{
+	color: #aaa;
+}
+.top-menu-btn:hover .text{
+	color: #fff;
+}
+.tmb-submenu{
+	position: absolute;
+	background-color: rgba(32,32,32,.8);
+	border-left: solid #fff 1px;
+	border-right: solid #fff 1px;
+	top: 40px;
+	left: -1px;
+	transform: translateY(-50%) scaleY(0);
+	transition-duration: 200ms;
+	transition-property: transform;
+}
+.top-menu-btn:hover .tmb-submenu{
+	transform: translateY(0) scaleY(1);
+}
+.tmb-submenu-btn{
+	color: #fff;
+	height: 20px;
+	padding: 10px;
+}
+.tmb-submenu-btn:hover{
+	background-color: rgba(16,16,16,.8);
+}
+.box{
+	position: relative;
+	width: 100%;
+}
+.box-img{
+	width: 100%;
+}
+#right-menu{
+	position: fixed;
+	right: 0;
+	top: 80px;
+	z-index: 1000;
+}
+.right-menu-btn{
+	position: relative;
+	height: 40px;
+	width: 40px;
+}
+.romb{
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	border: solid 2px #aaa;
+	top: 50%;
+	left: 50%;
+	background-color: rgba(64,64,64,.7);
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+.h-romb{
+	position: absolute;
+	height: 15px;
+	width: 15px;
+	top: 50%;
+	left: 50%;
+	background-color: #aaa;
+	transform: translate(-50%, -50%) rotate(45deg);
+	transition-duration: 200ms;
+	transition-property: opacity;
+	opacity: 0;
+}
+.right-menu-btn:hover .h-romb{
+	opacity: 1;
+}
+.right-menu-btn-text{
+	position: absolute;
+	top: 0;
+	padding: 5px;
+	height: 30px;
+	right: 100%;
+	color: #aaa;
+	font-size: 25px;
+	text-align: right;
+	min-width: 136px;
+	transition-duration: 200ms;
+	transition-property: transform;
+	transform: translateX(50%) scaleX(0);
+}
+#right-menu:hover .right-menu-btn-text{
+	transform: translateX(0) scaleX(1);
+}
+#ramka{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 999;
+}
+#ramka .line{
+	position: absolute;
+	background-color: rgba(153, 119, 68, 0.8);
+}
+#ramka .hor-line{
+	left: 80px;
+	right: 80px;
+	height: 2px;
+}
+#ramka .ver-line{
+	top: 80px;
+	bottom: 80px;
+	width: 2px;
+}
+#ramka .top-line{
+	top: 40px;
+}
+#ramka .down-line{
+	bottom: 40px;
+}
+#ramka .left-line{
+	left: 40px;
+}
+#ramka .right-line{
+	right: 40px;
+}
+#ramka img{
+	position: absolute;
+	height: 80px;
+	width: 80px;
+}
+#ramka .left{
+	left: 0;
+}
+#ramka .right{
+	right: 0;
+}
+#ramka .top{
+	top: 0;
+}
+#ramka .bottom{
+	bottom: 0;
+}
+.box-title{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 40px;
+	color: #fff;
+	font-family: gothic;
+	z-index: 1000; /*на 1 больше, чем у рамки*/
+}
+.box-title b{
+	font-size: 50px;
+}
+.special-btn{
+	text-shadow: -1px -1px 2px #000;
+	background: linear-gradient(120deg, #ff7 40%, #974 70%, #ff7 100%);
+	padding: 15px;
+	padding-left: 40px;
+	padding-right: 40px;
+	display: inline-block;
+	color: #fff;
+}
+.special-btn:hover{
+	background: linear-gradient(120deg, #ff5 40%, #974 70%, #ff5 100%);
+}

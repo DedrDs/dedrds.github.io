@@ -1,0 +1,56 @@
+body{
+	background-color: #000010;
+	background-image: url(wall.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+li{
+	height: 100px;
+	width: 500px;
+	background-color: rgba(158, 65, 74, 0.5);
+	padding: 10px;
+	margin: 10px;
+	border-radius: 20px;
+	transition-duration: 1s;
+	transition-property: transform;
+	overflow: hidden;
+	border: solid #333 2px;
+}
+
+li:hover{
+	transform: translate(-10px,0);
+}
+
+h3{
+	font-size: 21px;
+	margin: 0;
+	position: relative;
+	top: -31px;
+	transition-duration: 1s;
+	transition-property: transform;
+	color: #fff;
+	text-decoration: none;
+}
+a{
+	text-decoration: none;
+}
+li:hover h3{
+	transform: translate(0,31px);
+}
+
+img{
+	height: 100%;
+	position: sticky;
+	bottom: 0;
+	left: 520px;
+	width: 0;
+	border-radius: 10px;
+	transition-duration: 1s;
+	transition-property: width;
+}
+
+li:hover img{
+	width: 100px;
+}

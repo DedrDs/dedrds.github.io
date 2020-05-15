@@ -1,0 +1,130 @@
+@font-face{
+	font-family: font1;
+	src: url("1.otf");
+}
+body{
+	margin: 0;
+}
+.preload{
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-ms-transition: none !important;
+	-o-transition: none !important;
+}
+#top-menu{
+	position: relative;
+	height: 50px;
+	width: 100%;
+	background-color: #222;
+	z-index: 1;
+}
+#box1{
+	width: 100%;
+}
+.box-slide-img{
+	width: 100%;
+}
+.top-menu-el{
+	display: inline-block;
+	height: 30px;
+	padding: 10px;
+	font-size: 25px;
+	overflow: hidden;
+	color: #aaa;
+}
+.top-menu-btn{
+	border-bottom: solid #09D 0px;
+	transition-duration: 200ms;
+	transition-property: border-bottom-width, padding-bottom, color;
+}
+.top-menu-btn:hover{
+	color: #fff;
+	border-bottom-width: 7px;
+	padding-bottom: 3px;
+}
+#top-menu a{
+	text-decoration: none;
+}
+.top-menu-el-img{
+	height: 40px;
+	margin: -5px;
+}
+.box1-slide{
+	width: 100%;
+	position: relative;
+}
+#box1-slide1{
+	display: block;
+}
+#box1-slide2{
+	display: none;
+}
+.box1-slide-title{
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+.box1-slide-title p{
+	font-size: 30px;
+	color: #fff;
+	text-shadow: 0 0 10px #000;
+}
+.box1-slide-title b{
+	font-size: 50px;
+	color: #09D;
+	font-family: font1;
+	text-shadow: 0 0 10px #000;
+}
+.box1-slide-title-img{
+	height: 150px;
+}
+#box1-slide1-title{
+	left: 75%;
+}
+#box1-slide2-title{
+	left: 50%;
+	text-align: center;
+}
+.pretty-btn{
+	background-color: #09D;
+	padding: 10px;
+	font-size: 25px;
+	color: #fff;
+	display: inline-block;
+	transition-duration: 200ms;
+	transition-property: transform;
+}
+.pretty-btn:hover{
+	transform: skew(-5deg) translateX(2.2px);
+}
+.pretty-btn div{
+	transition-duration: 200ms;
+	transition-property: transform;
+}
+.pretty-btn:hover div{
+	transform: skew(5deg) translateX(2.2px);
+}
+#box1-slide1-play-btn{
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	bottom: 150px;
+	right: 150px;
+	background-color: rgba(0,0,0,0.7);
+	border-radius: 50%;
+	border: solid #333 5px;
+}
+.triangle-right{
+	background-color: #333;
+	height: 60px;
+	width: 50px;
+	position: absolute;
+	top: 50%;
+	left: 55%;
+	transform: translate(-50%, -50%);
+	-webkit-clip-path: polygon(
+		0% 0%,
+		0% 100%,
+		100% 50%
+		);
+}

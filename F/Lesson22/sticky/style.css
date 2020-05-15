@@ -1,0 +1,15 @@
+#sticky{
+	position: sticky;
+	width: 400px;
+	background-color: #f00;
+	top: 50px;
+}
+#normal{
+	background-color: #444;
+	width: 500px;
+}
+#big-normal{
+	width: 100%;
+	background-color: #222;
+	border: dashed #0f0 5px;
+}
